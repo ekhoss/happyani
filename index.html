@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Você ♥</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Patrick+Hand&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== TELA DE SENHA ===== -->
+  <div class="password-screen" id="passwordScreen">
+    <div class="password-box">
+      <div class="pwd-hearts">♥ ♥ ♥</div>
+      <h2 class="pwd-title">Para Você ♥</h2>
+      <p class="pwd-subtitle">Digite a senha para abrir seu presente</p>
+      <div class="pwd-input-wrap">
+        <input type="password" id="pwdInput" class="pwd-input" placeholder="••••••" maxlength="20"
+               onkeydown="if(event.key==='Enter') checkPassword()" />
+        <button class="pwd-btn" onclick="checkPassword()">Abrir ♥</button>
+      </div>
+      <p class="pwd-error" id="pwdError"></p>
+    </div>
+  </div>
+
+  <!-- ===== BOOK WRAPPER ===== -->
+  <div class="scene">
+    <div class="book">
+
+      <!-- ======== LEFT PAGE ======== -->
+      <div class="page page-left">
+
+        <!-- Title -->
+        <div class="title-block">
+          <div class="title-hearts">♥ ♥</div>
+          <h1 class="title-main">Happy<br><span>Valentine's</span><br>Day</h1>
+          <div class="title-hearts">♥ ♥</div>
+        </div>
+
+        <!-- Quote top -->
+        <div class="quote-top">
+          Every memory<br>with you is my<br>favorite song. ♪
+        </div>
+
+        <!-- Main photo area with heart frame -->
+        <div class="heart-area">
+          <!-- Decorative sticker top -->
+          <div class="sticker-note sticker-top">
+            Desde o momento em<br>que te conheci, a vida<br>ganhou cor e propósito.
+          </div>
+
+          <!-- Heart photo frame -->
+          <div class="heart-frame" id="heartFrame">
+            <!--
+              COMO ADICIONAR SUA FOTO:
+              Substitua o texto abaixo por: <img src="sua-foto.jpg" alt="Nós dois" />
+              A imagem será cortada em formato de coração automaticamente.
+            -->
+            <div class="heart-placeholder">
+              <span>Coloque sua<br>foto aqui ♥</span>
+            </div>
+          </div>
+
+          <!-- Decorations around heart -->
+          <div class="deco deco-rose">🌹</div>
+          <div class="deco deco-sparkle">✦</div>
+          <div class="deco deco-sparkle2">✦</div>
+        </div>
+
+        <!-- Handwritten note middle -->
+        <div class="note-middle">
+          Se eu disse que te amo,<br>foi porque quero te<br>amar pra sempre. ♥
+        </div>
+
+        <!-- Polaroid photos -->
+        <div class="polaroids">
+          <!-- POLAROID 1 — substitua src pela sua foto -->
+          <div class="polaroid polaroid-left" onclick="openLightbox('photo1')">
+            <div class="polaroid-inner">
+              <div class="polaroid-img" id="photo1">
+                <!--
+                  COMO ADICIONAR FOTO:
+                  Substitua por: <img src="foto1.jpg" />
+                -->
+                <div class="photo-placeholder">📷<br>Foto 1</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- POLAROID 2 — substitua src pela sua foto -->
+          <div class="polaroid polaroid-right" onclick="openLightbox('photo2')">
+            <div class="polaroid-inner">
+              <div class="polaroid-img" id="photo2">
+                <!--
+                  COMO ADICIONAR FOTO:
+                  Substitua por: <img src="foto2.jpg" />
+                -->
+                <div class="photo-placeholder">📷<br>Foto 2</div>
+              </div>
+              <div class="polaroid-caption">você e eu, sempre.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom note on left page -->
+        <div class="note-bottom-left">meu lugar favorito ♡</div>
+
+        <!-- Bear sticker -->
+        <div class="sticker-bear">🧸</div>
+
+      </div><!-- end page-left -->
+
+      <!-- ======== SPINE ======== -->
+      <div class="spine">
+        <div class="spiral" aria-hidden="true">
+          <div class="ring" style="top:8%"></div>
+          <div class="ring" style="top:16%"></div>
+          <div class="ring" style="top:24%"></div>
+          <div class="ring" style="top:32%"></div>
+          <div class="ring" style="top:40%"></div>
+          <div class="ring" style="top:48%"></div>
+          <div class="ring" style="top:56%"></div>
+          <div class="ring" style="top:64%"></div>
+          <div class="ring" style="top:72%"></div>
+          <div class="ring" style="top:80%"></div>
+          <div class="ring" style="top:88%"></div>
+          <div class="ring" style="top:96%"></div>
+        </div>
+      </div>
+
+      <!-- ======== RIGHT PAGE ======== -->
+      <div class="page page-right">
+
+        <!-- Letters header -->
+        <div class="letters-header">
+          <h2>Cartas para abrir<br>nos nossos dias especiais ♥</h2>
+        </div>
+
+        <!-- Letters list -->
+        <div class="letters-list">
+
+          <!--
+            =============================================
+            COMO EDITAR AS CARTAS:
+            - Mude "Para abrir em DD/MM" para a data que quiser
+            - Mude status="available" para exibir "Abrir agora"
+            - Escreva o conteúdo da carta dentro de data-content="..."
+            =============================================
+          -->
+
+          <!-- CARTA 01 — DISPONÍVEL -->
+          <div class="letter-card available" onclick="openLetter(this)"
+               data-title="Carta 01"
+               data-date="14/02"
+               data-content="Escreva aqui o texto da Carta 01 para seu namorado. Pode ser uma memória especial, uma declaração de amor, ou qualquer coisa que venha do coração. ♥">
+            <div class="letter-icon envelope">
+              <div class="env-body"></div>
+              <div class="env-flap"></div>
+              <div class="env-heart">♥</div>
+            </div>
+            <div class="letter-info">
+              <div class="badge-available">DISPONÍVEL HOJE</div>
+              <div class="letter-title">Carta 01</div>
+              <div class="letter-date">Para abrir em 14/02</div>
+            </div>
+            <button class="btn-open">Abrir agora</button>
+          </div>
+
+          <!-- CARTA 02 — BLOQUEADA -->
+          <div class="letter-card locked"
+               data-title="Carta 02"
+               data-date="21/03"
+               data-content="Conteúdo da Carta 02...">
+            <div class="letter-icon lock">🔒</div>
+            <div class="letter-info">
+              <div class="letter-title">Carta 02</div>
+              <div class="letter-date">Para abrir em 21/03</div>
+            </div>
+            <div class="badge-locked">BLOQUEADA</div>
+          </div>
+
+          <!-- CARTA 03 — BLOQUEADA -->
+          <div class="letter-card locked"
+               data-title="Carta 03"
+               data-date="12/06"
+               data-content="Conteúdo da Carta 03...">
+            <div class="letter-icon lock">🔒</div>
+            <div class="letter-info">
+              <div class="letter-title">Carta 03</div>
+              <div class="letter-date">Para abrir em 12/06</div>
+            </div>
+            <div class="badge-locked">BLOQUEADA</div>
+          </div>
+
+          <!-- CARTA 04 — BLOQUEADA -->
+          <div class="letter-card locked"
+               data-title="Carta 04"
+               data-date="22/09"
+               data-content="Conteúdo da Carta 04...">
+            <div class="letter-icon lock">🔒</div>
+            <div class="letter-info">
+              <div class="letter-title">Carta 04</div>
+              <div class="letter-date">Para abrir em 22/09</div>
+            </div>
+            <div class="badge-locked">BLOQUEADA</div>
+          </div>
+
+          <!-- CARTA 05 — BLOQUEADA -->
+          <div class="letter-card locked"
+               data-title="Carta 05"
+               data-date="24/12"
+               data-content="Conteúdo da Carta 05...">
+            <div class="letter-icon lock">🔒</div>
+            <div class="letter-info">
+              <div class="letter-title">Carta 05</div>
+              <div class="letter-date">Para abrir em 24/12</div>
+            </div>
+            <div class="badge-locked">BLOQUEADA</div>
+          </div>
+
+        </div><!-- end letters-list -->
+
+        <!-- Footer note -->
+        <div class="letters-footer">
+          Cada carta guarda um pedacinho<br>do que sinto por você. ♥
+        </div>
+
+        <!-- Paper clip decoration -->
+        <div class="paper-clip">📎</div>
+
+      </div><!-- end page-right -->
+
+    </div><!-- end book -->
+  </div><!-- end scene -->
+
+  <!-- ======== BOTTOM LEFT PANEL (Music + Countdown + Buttons) ======== -->
+  <div class="bottom-left-panel">
+
+    <!-- Music Player -->
+    <div class="music-player">
+      <!--
+        COMO ADICIONAR MÚSICAS:
+        Edite o array PLAYLIST no arquivo script.js
+        com os nomes das suas músicas e artistas.
+        Para adicionar arquivos de áudio reais, use:
+        { title: "Nome da música", artist: "Artista", src: "musica.mp3" }
+      -->
+      <div class="music-cover" id="musicCover">
+        <div class="cover-placeholder">♪</div>
+      </div>
+      <div class="music-info">
+        <div class="music-title" id="musicTitle">Lover</div>
+        <div class="music-artist" id="musicArtist">Taylor Swift</div>
+        <div class="music-heart">♥</div>
+      </div>
+      <div class="music-progress">
+        <span class="time-current" id="timeCurrent">0:00</span>
+        <div class="progress-bar" id="progressBar" onclick="seekAudio(event)">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <span class="time-total" id="timeTotal">0:00</span>
+      </div>
+      <div class="music-controls">
+        <button onclick="prevSong()" title="Anterior">⏮</button>
+        <button onclick="togglePlay()" id="playBtn" class="play-btn" title="Play/Pause">▶</button>
+        <button onclick="nextSong()" title="Próxima">⏭</button>
+      </div>
+    </div>
+
+    <!-- Countdown -->
+    <div class="countdown-block">
+      <div class="countdown-label">PRÓXIMA CARTA</div>
+      <div class="countdown-grid">
+        <div class="cd-item"><span id="cdDays">00</span><small>DIAS</small></div>
+        <div class="cd-item"><span id="cdHours">00</span><small>HORAS</small></div>
+        <div class="cd-item"><span id="cdMins">00</span><small>MIN</small></div>
+        <div class="cd-item"><span id="cdSecs">00</span><small>SEG</small></div>
+      </div>
+      <!--
+        COMO MUDAR A DATA DO CONTADOR:
+        No script.js, edite a variável NEXT_LETTER_DATE
+      -->
+      <div class="countdown-info">será aberta em <span id="nextLetterDate">14/02</span></div>
+    </div>
+
+    <!-- Nav buttons -->
+    <div class="nav-buttons">
+      <button class="nav-btn" onclick="showSection('memorias')">
+        <span>⭐</span> Memórias
+      </button>
+      <button class="nav-btn" onclick="showSection('cartas')">
+        <span>✉</span> Cartas
+      </button>
+    </div>
+
+    <div class="made-with">Feito com ♥ pra você</div>
+  </div>
+
+  <!-- Music toggle buttons (top right) -->
+  <div class="music-top-buttons">
+    <button onclick="togglePlaylistPanel()" title="Playlist">♪</button>
+    <button onclick="toggleMute()" id="muteBtn" title="Mudo/Som">🔊</button>
+  </div>
+
+  <!-- Playlist panel -->
+  <div class="playlist-panel" id="playlistPanel">
+    <div class="playlist-title">🎵 Playlist</div>
+    <ul id="playlistItems"></ul>
+    <!--
+      ADICIONE MÚSICAS no script.js no array PLAYLIST
+    -->
+  </div>
+
+  <!-- ======== FILM STRIP (bottom) ======== -->
+  <div class="film-strip-container">
+    <button class="film-nav film-prev" onclick="filmScroll(-1)">❮</button>
+    <div class="film-strip" id="filmStrip">
+      <!--
+        COMO ADICIONAR FOTOS AO ROLO:
+        Adicione mais <div class="film-frame"> com suas fotos dentro
+        Substitua o conteúdo .frame-inner por: <img src="sua-foto.jpg" />
+      -->
+      <div class="film-frame" onclick="openLightbox('film0')">
+        <div class="film-holes"><div></div><div></div><div></div></div>
+        <div class="frame-inner" id="film0"><div class="photo-placeholder small">📷 1</div></div>
+        <div class="film-holes"><div></div><div></div><div></div></div>
+      </div>
+      <div class="film-frame active" onclick="openLightbox('film1')">
+        <div class="film-holes"><div></div><div></div><div></div></div>
+        <div class="frame-inner" id="film1"><div class="photo-placeholder small">📷 2</div></div>
+        <div class="film-holes"><div></div><div></div><div></div></div>
+      </div>
+      <div class="film-frame" onclick="openLightbox('film2')">
+        <div class="film-holes"><div></div><div></div><div></div></div>
+        <div class="frame-inner" id="film2"><div class="photo-placeholder small">📷 3</div></div>
+        <div class="film-holes"><div></div><div></div><div></div></div>
+      </div>
+      <div class="film-frame" onclick="openLightbox('film3')">
+        <div class="film-holes"><div></div><div></div><div></div></div>
+        <div class="frame-inner" id="film3"><div class="photo-placeholder small">📷 4</div></div>
+        <div class="film-holes"><div></div><div></div><div></div></div>
+      </div>
+      <div class="film-frame" onclick="openLightbox('film4')">
+        <div class="film-holes"><div></div><div></div><div></div></div>
+        <div class="frame-inner" id="film4"><div class="photo-placeholder small">📷 5</div></div>
+        <div class="film-holes"><div></div><div></div><div></div></div>
+      </div>
+      <div class="film-frame" onclick="openLightbox('film5')">
+        <div class="film-holes"><div></div><div></div><div></div></div>
+        <div class="frame-inner" id="film5"><div class="photo-placeholder small">📷 6</div></div>
+        <div class="film-holes"><div></div><div></div><div></div></div>
+      </div>
+      <div class="film-frame" onclick="openLightbox('film6')">
+        <div class="film-holes"><div></div><div></div><div></div></div>
+        <div class="frame-inner" id="film6"><div class="photo-placeholder small">📷 7</div></div>
+        <div class="film-holes"><div></div><div></div><div></div></div>
+      </div>
+      <div class="film-frame" onclick="openLightbox('film7')">
+        <div class="film-holes"><div></div><div></div><div></div></div>
+        <div class="frame-inner" id="film7"><div class="photo-placeholder small">📷 8</div></div>
+        <div class="film-holes"><div></div><div></div><div></div></div>
+      </div>
+    </div>
+    <button class="film-nav film-next" onclick="filmScroll(1)">❯</button>
+  </div>
+
+  <!-- ======== LETTER MODAL ======== -->
+  <div class="modal-overlay" id="letterModal" onclick="closeLetterModal(event)">
+    <div class="modal-envelope" id="modalEnvelope">
+      <!-- Envelope visual (animates open) -->
+      <div class="modal-env-wrapper">
+        <div class="modal-env-body"></div>
+        <div class="modal-env-flap" id="modalFlap"></div>
+        <div class="modal-env-heart">♥</div>
+      </div>
+      <!-- Letter card that slides out -->
+      <div class="modal-letter" id="modalLetter">
+        <div class="modal-letter-inner">
+          <div class="modal-letter-title" id="modalTitle">Carta 01</div>
+          <div class="modal-letter-date" id="modalDate">14/02</div>
+          <div class="modal-letter-content" id="modalContent">Texto da carta...</div>
+          <div class="modal-letter-sig">Com todo meu amor ♥</div>
+        </div>
+      </div>
+      <button class="modal-close" onclick="closeLetterModal()">✕ Fechar</button>
+    </div>
+  </div>
+
+  <!-- ======== LIGHTBOX (photo viewer) ======== -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-inner">
+      <div class="lightbox-content" id="lightboxContent"></div>
+      <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
